@@ -1,7 +1,8 @@
 # 2b-web-scrapper-vue3
 
 TODO: 
-[] - migrate node scripts over here
+[x] - migrate node scripts over here
+[] - make the scripts be one command. 
 [] - Fix front page
 [] - rename project
 
