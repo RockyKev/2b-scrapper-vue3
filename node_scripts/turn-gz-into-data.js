@@ -21,9 +21,6 @@ function getFilesFromPath(path, extension) {
   return glob.sync(`${path}/**/*.${extension}`);
 }
 
-const dataPath = "./cheerio_data/aws/02/07";
-const endLocation = "./cheerio_data/unzip"; // THIS DIRECTORY NEEDS TO EXIST FIRST
-const files = getFilesFromPath(dataPath, "gz");
 
 function extractAllGZipFiles(array, location) {
 
@@ -42,6 +39,22 @@ function extractAllGZipFiles(array, location) {
   })
 
 }
+
+
+const dataPath = "./cheerio_data/aws/";
+const endLocation = "./cheerio_data/unzip"; // THIS DIRECTORY NEEDS TO EXIST FIRST
+
+// make the folder
+// https://nodejs.dev/learn/working-with-folders-in-nodejs
+try {
+  if (!fs.existsSync(endLocation)) {
+    fs.mkdirSync(endLocation)
+  }
+} catch (err) {
+  console.error(err)
+}
+
+const files = getFilesFromPath(dataPath, "gz");
 
 extractAllGZipFiles(files, endLocation);
 
