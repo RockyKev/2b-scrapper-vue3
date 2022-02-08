@@ -1,5 +1,10 @@
 # 2b-web-scrapper-vue3
 
+TODO: 
+[] - migrate node scripts over here
+[] - Fix front page
+[] - rename project
+
 ## Project setup
 
 1. Install dependencies (Use node lts)
@@ -11,6 +16,7 @@ npm install
 
 ```
 VUE_APP_BASE_URL=http://localhost:8080/
+S3_BUCKET=my_bucket/website-scraping-data/2022/
 ```
 
 ### Compiles and hot-reloads for development
