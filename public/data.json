@@ -1,0 +1,176 @@
+[
+  {
+    "timestamp:": 1644208818443,
+    "readable-timestamp": "2022-02-07-04-40-18",
+    "salaries": [
+      { "title": "CTO / XTO – Chieftan of tech", "salary": ["$400,000"] },
+      { "title": "Chief Marketing Officer", "salary": ["$350,000"] },
+      { "title": "Chief Product Officer", "salary": ["$350,000"] },
+      {
+        "title": "CSO / XSO – Chief Security Officer / Executive Security Officer",
+        "salary": ["$250,000"]
+      },
+      { "title": "Director of Software Engineering", "salary": ["$250,000."] },
+      { "title": "Security Engineer", "salary": ["$175,000/year"] },
+      {
+        "title": "Cyber Security Analyst – Information Systems and Networking",
+        "salary": ["$175,000"]
+      },
+      {
+        "title": "Security Analyst – Web Applications",
+        "salary": ["$175,000"]
+      },
+      { "title": "Marketing Data Analyst", "salary": ["$70,000/year"] },
+      {
+        "title": "Landing Page Designer/Developer",
+        "salary": ["$110,000/year"]
+      },
+      { "title": "Front End SEO Developer", "salary": ["$110,000/year"] },
+      { "title": "Junior Front-End Web Developer", "salary": ["$75,000/year"] },
+      { "title": "Front-End Web Developer", "salary": ["$110,000/year"] },
+      {
+        "title": "Senior Front-End Web Developer",
+        "salary": ["$150,000/year"]
+      },
+      { "title": "Marketing Content Writer", "salary": ["$60,000/year"] },
+      { "title": "Product Manager", "salary": [] },
+      { "title": "Junior Automation Engineer", "salary": ["$55,000/year"] },
+      { "title": "Junior Software Engineer", "salary": ["$70,000"] },
+      { "title": "Software Engineer", "salary": ["$85,000", "$100,000/year"] },
+      {
+        "title": "Mid Software Engineer",
+        "salary": ["$140,000/year**$10,000"]
+      },
+      {
+        "title": "Senior Software Engineer (Ruby on Rails)",
+        "salary": ["$185,000/year**$25,000"]
+      },
+      { "title": "VOIP Architect", "salary": ["$190,000/year"] },
+      { "title": "VOIP Developer", "salary": ["$120,000/year"] },
+      { "title": "Database Administrator", "salary": ["$110,000/year"] },
+      { "title": "iOS App Developer", "salary": ["$110,000/year"] },
+      { "title": "Android App Developer", "salary": ["$110,000/year"] },
+      { "title": "UI/UX Designer", "salary": ["$100,000/year"] },
+      {
+        "title": "Junior Linux Systems Engineer",
+        "salary": ["$65,000", "$80,000/year"]
+      }
+    ]
+  },
+  {
+    "timestamp:": 1644208818443,
+    "readable-timestamp": "2022-02-07-04-40-18",
+    "salaries": [
+      { "title": "CTO / XTO – Chieftan of tech", "salary": ["$400,000"] },
+      { "title": "Chief Marketing Officer", "salary": ["$350,000"] },
+      { "title": "Chief Product Officer", "salary": ["$350,000"] },
+      {
+        "title": "CSO / XSO – Chief Security Officer / Executive Security Officer",
+        "salary": ["$250,000"]
+      },
+      { "title": "Director of Software Engineering", "salary": ["$250,000."] },
+      { "title": "Security Engineer", "salary": ["$175,000/year"] },
+      {
+        "title": "Cyber Security Analyst – Information Systems and Networking",
+        "salary": ["$175,000"]
+      },
+      {
+        "title": "Security Analyst – Web Applications",
+        "salary": ["$175,000"]
+      },
+      { "title": "Marketing Data Analyst", "salary": ["$70,000/year"] },
+      {
+        "title": "Landing Page Designer/Developer",
+        "salary": ["$110,000/year"]
+      },
+      { "title": "Front End SEO Developer", "salary": ["$110,000/year"] },
+      { "title": "Junior Front-End Web Developer", "salary": ["$75,000/year"] },
+      { "title": "Front-End Web Developer", "salary": ["$110,000/year"] },
+      {
+        "title": "Senior Front-End Web Developer",
+        "salary": ["$150,000/year"]
+      },
+      { "title": "Marketing Content Writer", "salary": ["$60,000/year"] },
+      { "title": "Product Manager", "salary": [] },
+      { "title": "Junior Automation Engineer", "salary": ["$55,000/year"] },
+      { "title": "Junior Software Engineer", "salary": ["$70,000"] },
+      { "title": "Software Engineer", "salary": ["$85,000", "$100,000/year"] },
+      {
+        "title": "Mid Software Engineer",
+        "salary": ["$140,000/year**$10,000"]
+      },
+      {
+        "title": "Senior Software Engineer (Ruby on Rails)",
+        "salary": ["$185,000/year**$25,000"]
+      },
+      { "title": "VOIP Architect", "salary": ["$190,000/year"] },
+      { "title": "VOIP Developer", "salary": ["$120,000/year"] },
+      { "title": "Database Administrator", "salary": ["$110,000/year"] },
+      { "title": "iOS App Developer", "salary": ["$110,000/year"] },
+      { "title": "Android App Developer", "salary": ["$110,000/year"] },
+      { "title": "UI/UX Designer", "salary": ["$100,000/year"] },
+      {
+        "title": "Junior Linux Systems Engineer",
+        "salary": ["$65,000", "$80,000/year"]
+      }
+    ]
+  },
+  {
+    "timestamp:": 1644212855510,
+    "readable-timestamp": "2022-02-07-05-47-35",
+    "salaries": [
+      { "title": "CTO / XTO – Chieftan of tech", "salary": ["$400,000"] },
+      { "title": "Chief Marketing Officer", "salary": ["$350,000"] },
+      { "title": "Chief Product Officer", "salary": ["$350,000"] },
+      {
+        "title": "CSO / XSO – Chief Security Officer / Executive Security Officer",
+        "salary": ["$250,000"]
+      },
+      { "title": "Director of Software Engineering", "salary": ["$250,000."] },
+      { "title": "Security Engineer", "salary": ["$175,000/year"] },
+      {
+        "title": "Cyber Security Analyst – Information Systems and Networking",
+        "salary": ["$175,000"]
+      },
+      {
+        "title": "Security Analyst – Web Applications",
+        "salary": ["$175,000"]
+      },
+      { "title": "Marketing Data Analyst", "salary": ["$70,000/year"] },
+      {
+        "title": "Landing Page Designer/Developer",
+        "salary": ["$110,000/year"]
+      },
+      { "title": "Front End SEO Developer", "salary": ["$110,000/year"] },
+      { "title": "Junior Front-End Web Developer", "salary": ["$75,000/year"] },
+      { "title": "Front-End Web Developer", "salary": ["$110,000/year"] },
+      {
+        "title": "Senior Front-End Web Developer",
+        "salary": ["$150,000/year"]
+      },
+      { "title": "Marketing Content Writer", "salary": ["$60,000/year"] },
+      { "title": "Product Manager", "salary": [] },
+      { "title": "Junior Automation Engineer", "salary": ["$55,000/year"] },
+      { "title": "Junior Software Engineer", "salary": ["$70,000"] },
+      { "title": "Software Engineer", "salary": ["$85,000", "$100,000/year"] },
+      {
+        "title": "Mid Software Engineer",
+        "salary": ["$140,000/year**$10,000"]
+      },
+      {
+        "title": "Senior Software Engineer (Ruby on Rails)",
+        "salary": ["$185,000/year**$25,000"]
+      },
+      { "title": "VOIP Architect", "salary": ["$190,000/year"] },
+      { "title": "VOIP Developer", "salary": ["$120,000/year"] },
+      { "title": "Database Administrator", "salary": ["$110,000/year"] },
+      { "title": "iOS App Developer", "salary": ["$110,000/year"] },
+      { "title": "Android App Developer", "salary": ["$110,000/year"] },
+      { "title": "UI/UX Designer", "salary": ["$100,000/year"] },
+      {
+        "title": "Junior Linux Systems Engineer",
+        "salary": ["$65,000", "$80,000/year"]
+      }
+    ]
+  }
+]
