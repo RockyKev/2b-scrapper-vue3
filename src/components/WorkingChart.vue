@@ -8,16 +8,21 @@
 
 <script>
 import { Chart, registerables } from "chart.js";
+import axios from "axios";
 
 export default {
-  name: "RandomChart3",
+  name: "WorkingChart",
   data() {
     return {
-      values: [5, 3.2, 4.4, 4.2, 5.8, 7.8, 1],
+      // values: [5, 3.2, 4.4, 4.2, 5.8, 7.8, 1],
+      baseUrl: process.env.VUE_APP_BASE_URL,
+      jsonData: [],
+      isReady: false
     };
   },
   created() {
     Chart.register(...registerables);
+    this.fetchData();
   },
   mounted() {
     let ctx = this.$refs.productsBar.getContext("2d");
@@ -156,5 +161,14 @@ export default {
       },
     });
   },
+  methods: {
+      fetchData() {
+        axios.get(this.baseUrl + 'data.json').then(response => {
+          console.log(response);
+          this.jsonData = response.data;
+          this.isReady = true;
+        })
+      }
+  }
 };
 </script>

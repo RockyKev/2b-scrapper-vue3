@@ -1,8 +1,16 @@
-# web-scrapper-vue3
+# 2b-web-scrapper-vue3
 
 ## Project setup
+
+1. Install dependencies (Use node lts)
 ```
 npm install
+```
+
+2. create a `.env` file
+
+```
+VUE_APP_BASE_URL=http://localhost:8080/
 ```
 
 ### Compiles and hot-reloads for development
@@ -22,3 +30,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## Links that got me here
+https://medium.com/@negarjf/how-to-access-a-static-json-file-in-vue-cli-3-8943dc343f95
