@@ -16,8 +16,10 @@ export default {
     return {
       // values: [5, 3.2, 4.4, 4.2, 5.8, 7.8, 1],
       baseUrl: process.env.VUE_APP_BASE_URL,
-      jsonData: [],
-      isReady: false
+      jsonData: {},
+      theLabels: [],
+      theData: [],
+      isReady: false,
     };
   },
   created() {
@@ -25,7 +27,7 @@ export default {
     this.fetchData();
   },
   mounted() {
-    let ctx = this.$refs.productsBar.getContext("2d");
+    // let ctx = this.$refs.productsBar.getContext("2d");
 
     // new Chart(ctx, {
     //   type: "bar",
@@ -132,43 +134,165 @@ export default {
     //   ],
     // };
 
-    // X axis is the date. 
+    // X axis is the date.
     // Y axis is how much money
-    // dataset is each job title, filtered. 
+    // dataset is each job title, filtered.
 
-    const data = {
-      labels: ["Jan", "Feb", "Mar", "Apr", "May", "June", "July"],
-      datasets: [
-        {
-          label: "My First Dataset",
-          data: [65, 59, 80, 81, 56, 55, 40],
-          fill: false,
-          borderColor: "rgb(75, 192, 192)",
-          tension: 0.1,
-        },
-      ],
-    };
+    // reshaping the data to meet the needs of the data
+    // let theLabels = [];
+    // let theData = [];
 
-    new Chart(ctx, {
-      type: "line",
-      data: data,
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
+    // for (const key in this.jsonData) {
+    //   console.log("im running", key);
+    //   const datapoint = this.jsonData[key];
+
+    //   // 1 - get readable timestamp and pass it to the labels
+    //   theLabels.push(datapoint["readable-timestamp"]);
+
+    //   // 2 - get the title of one job
+    //   const filter = datapoint.filter(
+    //     (job) => job.title === "Front-End Web Developer"
+    //   );
+
+    //   // 3 - get the salary point if that filter is true
+    //   let salary = filter ? this.cleanMoney(filter[0].salary[0]) : 0;
+    //   theData.push(salary);
+    // }
+    // console.log("the jsonData");
+    // console.log(this.jsonData);
+    // console.log("the labels");
+    // console.log(theLabels);
+    // console.log("the data");
+    // console.log(theData);
+
+    // const data = {
+    //   labels: this.theLabels,
+    //   datasets: [
+    //     {
+    //       label: "Front-End Web Developer",
+    //       data: this.theData,
+    //       fill: false,
+    //       borderColor: "rgb(75, 192, 192)",
+    //       tension: 0.1,
+    //     },
+    //   ],
+    // };
+
+    // const data = {
+    //   labels: ["Jan", "Feb", "Mar", "Apr", "May", "June", "July"],
+    //   datasets: [
+    //     {
+    //       label: "My First Dataset",
+    //       // data: [65, 59, 80, 81, 56, 55, 40],
+    //       data: ["bird", "dog", "tree", "bird2", "dog2", "tree2", "lion"],
+    //       fill: false,
+    //       borderColor: "rgb(75, 192, 192)",
+    //       tension: 0.1,
+    //     },
+    //   ],
+    // };
+
+    // const data = {
+    //   labels: ["Jan", "Feb", "Mar", "Apr", "May", "June", "July"],
+    //   datasets: [
+    //     {
+    //       label: "My First Dataset",
+    //       // data: [65, 59, 80, 81, 56, 55, 40],
+    //       data: ["bird", "dog", "tree", "bird2", "dog2", "tree2", "lion"],
+    //       fill: false,
+    //       borderColor: "rgb(75, 192, 192)",
+    //       tension: 0.1,
+    //     },
+    //   ],
+    // };
+
+    // new Chart(ctx, {
+    //   type: "line",
+    //   data: data,
+    //   options: {
+    //     scales: {
+    //       y: {
+    //         beginAtZero: true,
+    //       },
+    //     },
+    //   },
+    // });
   },
   methods: {
-      fetchData() {
-        axios.get(this.baseUrl + 'data.json').then(response => {
-          console.log(response);
+    fetchData() {
+      if (!this.isReady) {
+        axios.get(this.baseUrl + "data.json").then((response) => {
           this.jsonData = response.data;
+          this.cleanData();
+          this.generateMap();
           this.isReady = true;
-        })
+        });
       }
-  }
+    },
+    cleanMoney(string) {
+      // turns "$150,000/year" into 150000;
+      return string.slice(1).replace("/year", "").replace(",", "");
+    },
+    cleanData() {
+      let tempLabels = [];
+      let tempSalary = [];
+
+      for (const key in this.jsonData) {
+        console.log("im running", key);
+        const datapoint = this.jsonData[key];
+
+        console.log("the datapoint");
+        console.log(datapoint);
+
+        // console.log("the jsonData");
+        // console.log(this.jsonData);
+
+        // 1 - get readable timestamp and pass it to the labels
+        tempLabels.push(datapoint["readable-timestamp"]);
+
+        // 2 - get the title of one job
+        const filter = datapoint["salaries"].filter(
+          (job) => job.title === "Front-End Web Developer"
+        );
+
+        // 3 - get the salary point if that filter is true
+        let salary = filter ? this.cleanMoney(filter[0].salary[0]) : 0;
+        tempSalary.push(salary);
+      }
+
+      this.theLabels = tempLabels;
+      this.theData = tempSalary;
+      console.log("the theLabels");
+      console.log(this.theLabels);
+      console.log("the theData");
+      console.log(this.theData);
+    },
+    generateMap() {
+      let ctx = this.$refs.productsBar.getContext("2d");
+      const data = {
+        labels: this.theLabels,
+        datasets: [
+          {
+            label: "Front-End Web Developer",
+            data: this.theData,
+            fill: false,
+            borderColor: "rgb(75, 192, 192)",
+            tension: 0.1,
+          },
+        ],
+      };
+      new Chart(ctx, {
+        type: "line",
+        data: data,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    },
+  },
 };
 </script>
