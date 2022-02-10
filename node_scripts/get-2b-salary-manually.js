@@ -5,12 +5,16 @@ const cheerio = require('cheerio')
 const pretty = require('pretty')
 const fs = require('fs')
 const date = require('date-and-time');
-// TODO: switch to ES6 method: https://github.com/cheeriojs/cheerio#loading
-// import * as cheerio from 'cheerio';
+
+// TODO: does this work?
+const JsonCircularCB = require('utilities.js').JsonCircularCB;
+
 
 const url = 'https://www.twobarrels.com/jobs/'
 
-const GO_ONLINE = false
+// Poor man's debug. This is to test and clean data without fetching.
+const GO_ONLINE = false;
+
 if (GO_ONLINE) {
   axios.get(url).then(
     (response) => {
@@ -18,21 +22,16 @@ if (GO_ONLINE) {
         const html = response.data
         const $ = cheerio.load(html)
 
-          generateFile('2B-live.json', cleanTheData($))
-        // clean the data
-        // const cleanedData = cleanTheData($)
+          generateFile('./cheerio_data/2B-live.json', cleanTheData($))
 
         // To generate the file without clean data
-        // generateFile('test', $.html);
-
-        // generateFile('2B.html', cleanedData)
+        // generateFile('./cheerio_data/test.html', $.html);
       }
     },
     (error) => console.log(error)
   )
-
-  // TODO: Add a then statement to clean the ata
 } else {
+  // How to test it manually 
   console.log('fetching file')
 
   // Open the file locally
@@ -42,10 +41,10 @@ if (GO_ONLINE) {
   // get the text file
   const $ = cheerio.load(fileOpened)
 
-  generateFile('2B.json', cleanTheData($))
-  // generateFile('2B.html', cleanTheData($));
+  generateFile('./cheerio_data/2B.json', cleanTheData($))
 }
 
+// This function will always be custom written for the website
 function cleanTheData($) {
   console.log("im in cleanTheData and we're ONLINE:", GO_ONLINE)
 
@@ -97,34 +96,34 @@ function cleanTheData($) {
 
 // circuluar fix
 // https://careerkarma.com/blog/converting-circular-structure-to-json/
-function JsonCircularCB() {
-  const visited = new WeakSet()
-  return (key, value) => {
-    if (typeof value === 'object' && value !== null) {
-      if (visited.has(value)) {
-        return
-      }
-      visited.add(value)
-    }
-    return value
-  }
-}
+// function JsonCircularCB() {
+//   const visited = new WeakSet()
+//   return (key, value) => {
+//     if (typeof value === 'object' && value !== null) {
+//       if (visited.has(value)) {
+//         return
+//       }
+//       visited.add(value)
+//     }
+//     return value
+//   }
+// }
 
-function generateFile(fileName, data) {
-  const date = Date.now()
+// function generateFile(fileName, data) {
+//   const date = Date.now()
 
-  // slip
-  const fileNameTitle = fileName.split('.')[0]
-  const fileType = fileName.split('.')[1]
+//   // slip
+//   const fileNameTitle = fileName.split('.')[0]
+//   const fileType = fileName.split('.')[1]
 
-  fs.writeFileSync(
-    `./cheerio_data/${fileNameTitle}-${date}.${fileType}`,
-    data,
-    (err) => {
-      if (err) {
-        console.error(err)
-        return
-      }
-    }
-  )
-}
+//   fs.writeFileSync(
+//     `${fileNameTitle}-${date}.${fileType}`,
+//     data,
+//     (err) => {
+//       if (err) {
+//         console.error(err)
+//         return
+//       }
+//     }
+//   )
+// }

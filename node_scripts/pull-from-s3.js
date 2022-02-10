@@ -2,7 +2,6 @@ const execSync = require('child_process').execSync;
 const path = require('path')
 require('dotenv').config();
 
-// const output = execSync('dir', { encoding: 'utf-8' });  // the default is 'buffer'
 const outputPath = path.resolve(__dirname, "../cheerio_data/aws");
 
 console.log("pulling from S3:", process.env.S3_BUCKET)

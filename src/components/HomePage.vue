@@ -39,7 +39,7 @@
 import WorkingChart from "./WorkingChart.vue";
 
 export default {
-  name: "HelloWorld",
+  name: "HomePage",
   components: {
     WorkingChart,
   },

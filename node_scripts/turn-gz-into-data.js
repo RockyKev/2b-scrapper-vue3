@@ -1,25 +1,9 @@
 // this script takes the aws gz file and creates a js object out of it.
-
-const zlib = require('zlib');
 const fs = require('fs');
-const glob = require('glob');
+const { getFilesFromPath, decompress } = require("./utilities");
 
-// https://pinoyitsolution.com/2019/05/22/how-to-unzip-multiple-gz-files-using-nodejs-and-zlib-on-windows-10/
-function decompress(fileIn, fileOut) {
-
-  const unzip = zlib.createUnzip();
-
-  const input = fs.createReadStream(fileIn);
-  const output = fs.createWriteStream(fileOut);
-
-  input.pipe(unzip).pipe(output);
-}
-
-// https://stackoverflow.com/a/52024318/4096078
-// https://stackoverflow.com/a/60604686/4096078
-function getFilesFromPath(path, extension) {
-  return glob.sync(`${path}/**/*.${extension}`);
-}
+const dataPath = "./cheerio_data/aws/";
+const endLocation = "./cheerio_data/unzip"; 
 
 
 function extractAllGZipFiles(array, location) {
@@ -28,6 +12,7 @@ function extractAllGZipFiles(array, location) {
 
   array.forEach(item => {
 
+    // TODO: This is very much hardcoded. Not a utility
     // POOR MAN's text filtering
     const newName = item.slice(28);
     console.log("location", location)
@@ -37,16 +22,11 @@ function extractAllGZipFiles(array, location) {
     decompress(item, `${location}/${newName}.json`)
 
   })
-
 }
 
-
-const dataPath = "./cheerio_data/aws/";
-const endLocation = "./cheerio_data/unzip"; // THIS DIRECTORY NEEDS TO EXIST FIRST
-
-// make the folder
-// https://nodejs.dev/learn/working-with-folders-in-nodejs
+// TODO: Add this to a 'create folder just in case' function
 try {
+  // https://nodejs.dev/learn/working-with-folders-in-nodejs
   if (!fs.existsSync(endLocation)) {
     fs.mkdirSync(endLocation)
   }
