@@ -20,7 +20,9 @@ You need to set up a `.env` (read below), along with setting up your [aws S3 acc
 
 5. Finally we're merging the data using `merge-data-into-single.js`
 
-All that code can be run with one line.
+TODO: All that code can be run with one line. TBD
+
+6. 
 
 ## Project setup
 
