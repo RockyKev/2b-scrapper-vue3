@@ -43,9 +43,13 @@ export default {
       return string.slice(1).replace("/year", "").replace(",", "");
     },
     cleanData() {
+      
+      // TODO: fix ones that have bonuses 
       let tempLabels = [];
       let finalData = [];
       let jobNames = {
+        "Landing Page Designer/Developer": [],
+        "Front End SEO Developer": [],
         "Junior Front-End Web Developer": [],
         "Front-End Web Developer": [],
         "Senior Front-End Web Developer": [],
@@ -53,13 +57,14 @@ export default {
         "Junior Software Engineer": [],
         "Software Engineer": [],
         // 'Mid Software Engineer': [] // FIX THIS - has bonus
+        // "Senior Software Engineer (Ruby on Rails)": [] // FIX THIS - has bonus
       };
 
       for (const key in this.jsonData) {
         // TODO: Do a check where you test the previous loop to see if it's the same.
         // if it's the same, cancel it.
-
         const datapoint = this.jsonData[key];
+        console.log(datapoint);
 
         // 1 - get readable timestamp and pass it to the labels
         tempLabels.push(datapoint["readable-timestamp"]);

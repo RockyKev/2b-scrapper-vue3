@@ -3,7 +3,7 @@
 TODO: 
 [x] - migrate node scripts over here
 [] - make the scripts be one command. 
-[] - Fix front page
+[x] - Fix front page
 [] - rename project
 
 ## How this works

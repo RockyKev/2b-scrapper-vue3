@@ -1,6 +1,6 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HomePage msg="Welcome to Your Vue.js App"/>
+  <img class="logo" alt="get money" src="./assets/salary-logo.webp">
+  <HomePage msg="Welcome to the 2B Salary Zone"/>
 </template>
 
 <script>
@@ -22,5 +22,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.logo {
+  width: 400px;
+  
 }
 </style>
