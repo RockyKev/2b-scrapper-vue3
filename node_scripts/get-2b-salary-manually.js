@@ -93,37 +93,3 @@ function cleanTheData($) {
   }
   return JSON.stringify(finalReturn, JsonCircularCB())
 }
-
-// circuluar fix
-// https://careerkarma.com/blog/converting-circular-structure-to-json/
-// function JsonCircularCB() {
-//   const visited = new WeakSet()
-//   return (key, value) => {
-//     if (typeof value === 'object' && value !== null) {
-//       if (visited.has(value)) {
-//         return
-//       }
-//       visited.add(value)
-//     }
-//     return value
-//   }
-// }
-
-// function generateFile(fileName, data) {
-//   const date = Date.now()
-
-//   // slip
-//   const fileNameTitle = fileName.split('.')[0]
-//   const fileType = fileName.split('.')[1]
-
-//   fs.writeFileSync(
-//     `${fileNameTitle}-${date}.${fileType}`,
-//     data,
-//     (err) => {
-//       if (err) {
-//         console.error(err)
-//         return
-//       }
-//     }
-//   )
-// }

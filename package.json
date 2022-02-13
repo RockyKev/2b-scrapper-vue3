@@ -1,12 +1,12 @@
 {
   "name": "web-scrapper-vue3",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "get-json": "pull:s3 && node:gzip && node:merge",
+    "get-json": "npm run pull:s3 && npm run node:gzip && npm run node:merge",
     "node:2b": "node node_scripts/get-2b-salary-manually.js",
     "pull:s3": "node node_scripts/pull-from-s3.js",
     "node:gzip": "node node_scripts/turn-gz-into-data.js",
