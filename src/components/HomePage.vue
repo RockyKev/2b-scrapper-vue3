@@ -2,16 +2,19 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <working-chart />
+    <footer-section />
   </div>
 </template>
 
 <script>
 import WorkingChart from "./WorkingChart.vue";
+import FooterSection from "./FooterSection.vue";
 
 export default {
   name: "HomePage",
   components: {
     WorkingChart,
+    FooterSection
   },
   props: {
     msg: String,

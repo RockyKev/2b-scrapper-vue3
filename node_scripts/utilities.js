@@ -24,7 +24,7 @@ function generateFile(src, data, setDate = true) {
   // TODO: consider using path?
   // https://nodejs.org/api/path.html
 
-  // TODO: check if there's a slash in it?
+  // Check if there's a slash in it
   const directoryOnly = src.substr(0, src.lastIndexOf("/"));
   const filenameOnly = src.substring(src.lastIndexOf("/") + 1);
 
