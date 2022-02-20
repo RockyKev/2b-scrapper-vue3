@@ -12,6 +12,10 @@ let object = {}
 
 directory.forEach(item => {
 
+    let yourDate = new Date()
+    
+    object['lastUpdated'] = yourDate.toISOString().split('T')[0];
+
     object[item] = {
       $import: item
     }
